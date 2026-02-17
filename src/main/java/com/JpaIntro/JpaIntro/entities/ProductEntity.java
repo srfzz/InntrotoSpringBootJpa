@@ -2,7 +2,6 @@ package com.JpaIntro.JpaIntro.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.AnyDiscriminatorImplicitValues;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,13 +9,13 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity()
+@Builder
 @Table(name="products")
-public class Product {
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
